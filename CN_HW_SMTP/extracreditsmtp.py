@@ -43,8 +43,8 @@ if recv1[:3] != '250':
     print('250 reply not received from server.')
 
 #Info for username and password
-username = "msmonilshah007@gmail.com"
-password = "monilmsd"
+username = "yourmail@gmail.com"
+password = "xxxxxx"
 base64_str = ("\x00"+username+"\x00"+password).encode()
 base64_str = base64.b64encode(base64_str)
 authMsg = "AUTH PLAIN ".encode()+base64_str+"\r\n".encode()
@@ -53,7 +53,8 @@ recv_auth = ssl_clientSocket.recv(1024)
 print(recv_auth.decode())
 # Send MAIL FROM command and print server response.
 # Fill in start
-mailFrom = "MAIL FROM:<msmonilshah007@gmail.com>\r\n"
+# Important to write mail id in '<' '>' braces
+mailFrom = "MAIL FROM:<yourmail@gmail.com>\r\n"
 ssl_clientSocket.send(mailFrom.encode())
 recv2 = ssl_clientSocket.recv(1024)
 recv2 = recv2.decode()
@@ -61,7 +62,7 @@ print("After MAIL FROM command: "+recv2)
 # Fill in end
 # Send RCPT TO command and print server response.
 # Fill in start
-rcptTo = "RCPT TO:<mds747@nyu.edu>\r\n"
+rcptTo = "RCPT TO:<yourmail@gmail.com>\r\n"
 ssl_clientSocket.send(rcptTo.encode())
 recv3 = ssl_clientSocket.recv(1024)
 recv3 = recv3.decode()
