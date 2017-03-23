@@ -10,7 +10,7 @@ serverSocket = socket(AF_INET, SOCK_STREAM)
 #Prepare a sever socket
 serverPort=1339
 #Fill in start
-serverSocket.bind(('192.168.1.161',serverPort))
+serverSocket.bind(('Your IP address(eg. 192.168...)',serverPort))
 serverSocket.listen(5)
 print('the web server is up on port:',serverPort)
 #Fill in end
